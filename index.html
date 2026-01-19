@@ -11,14 +11,13 @@
   <header>
     <h1>Your Name</h1>
     <p>Student / Developer / Designer</p>
+    <button id="theme-toggle">Toggle Dark Mode</button>
   </header>
 
   <main>
     <section>
       <h2>About Me</h2>
-      <p>
-        Short introduction about who you are, what you study, or what you’re interested in.
-      </p>
+      <p>Short introduction about who you are.</p>
     </section>
 
     <section>
@@ -26,12 +25,6 @@
       <ul>
         <li>
           <strong>Project One</strong><br />
-          <span>Short description of what it does.</span><br />
-          <a href="#">GitHub</a>
-        </li>
-        <li>
-          <strong>Project Two</strong><br />
-          <span>Short description.</span><br />
           <a href="#">GitHub</a>
         </li>
       </ul>
@@ -39,16 +32,20 @@
 
     <section>
       <h2>Contact</h2>
-      <p>
-        Email: <a href="mailto:you@email.com">you@email.com</a><br />
-        GitHub: <a href="https://github.com/yourusername">yourusername</a>
-      </p>
+      <p>Email: <a href="mailto:you@email.com">you@email.com</a></p>
     </section>
   </main>
 
   <footer>
-    <p>© 2026 Your Name</p>
+    <p>© 2026 Philip Wojdyna</p>
   </footer>
+
+  <script>
+    const toggle = document.getElementById("theme-toggle");
+    toggle.addEventListener("click", () => {
+      document.body.classList.toggle("dark");
+    });
+  </script>
 
 </body>
 </html>
