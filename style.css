@@ -5,6 +5,7 @@
   --header-text: #fff;
   --link: #0066cc;
   --section-border: #ddd;
+  --card-bg: #ffffff;
 }
 
 body.dark {
@@ -14,6 +15,7 @@ body.dark {
   --header-text: #ffffff;
   --link: #4da3ff;
   --section-border: #333;
+  --card-bg: #1a1a1a;
 }
 
 body {
@@ -24,39 +26,102 @@ body {
   line-height: 1.6;
 }
 
+/* HEADER */
 header {
   background: var(--header-bg);
   color: var(--header-text);
-  padding: 2rem;
+  padding: 2.5rem 1rem;
   text-align: center;
 }
 
-button {
-  margin-top: 1rem;
-  padding: 0.5rem 1rem;
-  cursor: pointer;
+.header-actions {
+  margin-top: 1.5rem;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
 }
 
+/* BUTTONS / LINKS */
+button,
+.btn {
+  padding: 0.6rem 1.2rem;
+  border: none;
+  cursor: pointer;
+  background: var(--link);
+  color: white;
+  text-decoration: none;
+  border-radius: 4px;
+  font-size: 0.9rem;
+}
+
+button:hover,
+.btn:hover {
+  opacity: 0.9;
+}
+
+/* MAIN LAYOUT */
 main {
-  max-width: 800px;
+  max-width: 1000px;
   margin: 2rem auto;
   padding: 0 1rem;
 }
 
 section {
-  margin-bottom: 2rem;
+  margin-bottom: 3rem;
 }
 
 h2 {
   border-bottom: 2px solid var(--section-border);
   padding-bottom: 0.3rem;
+  margin-bottom: 1rem;
 }
 
+/* PROJECT GRID */
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+}
+
+/* PROJECT CARDS */
+.project-card {
+  background: var(--card-bg);
+  border: 1px solid var(--section-border);
+  border-radius: 6px;
+  padding: 1rem;
+}
+
+.project-card img {
+  width: 100%;
+  border-radius: 4px;
+  margin-bottom: 0.75rem;
+}
+
+.project-card h3 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+}
+
+.project-card p {
+  font-size: 0.95rem;
+}
+
+/* FEATURED WEB APP */
+.project-card.featured {
+  max-width: 700px;
+}
+
+/* LISTS */
 ul {
-  list-style: none;
-  padding: 0;
+  padding-left: 1.2rem;
 }
 
+ul li {
+  margin-bottom: 0.4rem;
+}
+
+/* LINKS */
 a {
   color: var(--link);
   text-decoration: none;
@@ -66,8 +131,15 @@ a:hover {
   text-decoration: underline;
 }
 
+/* FOOTER */
 footer {
   text-align: center;
   padding: 1rem;
   background: #eee;
+  color: #555;
+}
+
+body.dark footer {
+  background: #0f0f0f;
+  color: #aaa;
 }

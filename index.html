@@ -3,42 +3,120 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Your Name | Portfolio</title>
+  <title>Philip Wojdyna | Portfolio</title>
   <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
 
+  <!-- HERO / HEADER -->
   <header>
     <h1>Philip Wojdyna</h1>
-    <p>Developer / Designer</p>
-    <button id="theme-toggle">Toggle Dark Mode</button>
+    <p>Game Developer & Web Developer</p>
+
+    <div class="header-actions">
+      <a href="#games" class="btn">View Games</a>
+      <a href="#web" class="btn">View Web App</a>
+      <button id="theme-toggle">Toggle Dark Mode</button>
+    </div>
   </header>
 
   <main>
-    <section>
+
+    <!-- ABOUT -->
+    <section id="about">
       <h2>About Me</h2>
-      <p>I’m a game developer with experience creating both 2D and 3D games using Unity and Godot, with a strong focus on C# 
-        and AI-driven systems. I hold an Advanced Diploma in Software Engineering and have a strong passion for creative map 
-        design and gameplay mechanics. In addition to game development, I have developed a full-stack web application as part 
-        of my web projects, utilizing APIs, data storage, React.js for the frontend, and Django (Python) for the backend. I’ve
-         also built and troubleshot PCs professionally, giving me a solid technical foundation and problem-solving mindset. I 
-         enjoy combining creativity with engineering to build engaging, well-optimized experiences.</p>
+      <p>
+        I’m a game developer with experience creating both 2D and 3D games using Unity and Godot,
+        with a strong focus on C# and AI-driven systems. I hold an Advanced Diploma in Software
+        Engineering and enjoy designing engaging gameplay mechanics and creative maps.
+      </p>
+
+      <p>
+        Alongside game development, I’ve built a full-stack web application using React for the
+        frontend and Django (Python) for the backend, including APIs and data storage. I also have
+        professional experience building and troubleshooting PCs, giving me a strong technical
+        foundation and problem-solving mindset.
+      </p>
     </section>
 
-    <section>
+    <!-- PROJECTS OVERVIEW -->
+    <section id="projects">
       <h2>Projects</h2>
-      <ul>
-        <li>
-          <strong>Project One</strong><br />
-          <a href="#">GitHub</a>
-        </li>
-      </ul>
+      <p>Selected work in game development and web applications.</p>
     </section>
 
-    <section>
-      <h2>Contact</h2>
-      <p>Email: <a href="mailto:you@email.com">you@email.com</a></p>
+    <!-- GAMES -->
+    <section id="games">
+      <h2>Games</h2>
+
+      <div class="project-grid">
+
+        <article class="project-card">
+          <img src="placeholder-game1.gif" alt="Game One gameplay preview" />
+          <h3>Game Title One</h3>
+          <p>
+            Short one-line hook describing the game and what makes it interesting.
+          </p>
+          <p><strong>Tech:</strong> Unity / Godot, C#</p>
+          <a href="#">Play / Download</a> · <a href="#">GitHub</a>
+        </article>
+
+        <article class="project-card">
+          <img src="placeholder-game2.gif" alt="Game Two gameplay preview" />
+          <h3>Game Title Two</h3>
+          <p>
+            Short one-line hook describing the core gameplay or mechanic.
+          </p>
+          <p><strong>Tech:</strong> Unity / Godot, C#</p>
+          <a href="#">Play / Download</a> · <a href="#">GitHub</a>
+        </article>
+
+        <article class="project-card">
+          <img src="placeholder-game3.gif" alt="Game Three gameplay preview" />
+          <h3>Game Title Three</h3>
+          <p>
+            Short one-line hook highlighting a unique system or idea.
+          </p>
+          <p><strong>Tech:</strong> Unity / Godot, C#</p>
+          <a href="#">Play / Download</a> · <a href="#">GitHub</a>
+        </article>
+
+      </div>
     </section>
+
+    <!-- WEB APP -->
+    <section id="web">
+      <h2>Web Application</h2>
+
+      <article class="project-card featured">
+        <img src="placeholder-webapp.png" alt="Web app screenshot" />
+        <h3>Web App Title</h3>
+        <p>
+          Brief description of what the app does and who it’s for.
+        </p>
+
+        <ul>
+          <li><strong>Frontend:</strong> React.js</li>
+          <li><strong>Backend:</strong> Django (Python)</li>
+          <li><strong>Features:</strong> APIs, authentication, data storage</li>
+        </ul>
+
+        <a href="#">Live Demo</a> · <a href="#">GitHub</a>
+      </article>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+      <h2>Contact</h2>
+      <p>
+        Email: <a href="mailto:you@email.com">you@email.com</a>
+      </p>
+      <p>
+        GitHub: <a href="#">github.com/yourusername</a>
+      </p>
+    </section>
+
   </main>
 
   <footer>
