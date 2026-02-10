@@ -39,7 +39,7 @@ header {
   display: flex;
   justify-content: center;
   gap: 1rem;
-  flex-wrap: wrap; /* Allow items to wrap to the next line */
+  flex-wrap: wrap; /* Ensure items wrap to the next line */
 }
 
 .header-actions a {
@@ -93,20 +93,46 @@ h2 {
   margin-top: 0;
 }
 
-/* GALLERY */
-.gallery {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 0.75rem;
-  margin-top: 1rem;
+/* GALLERY SLIDER */
+.gallery-slider {
+  position: relative;
+  width: 100%;
+  max-width: 400px; /* Adjust as needed */
+  margin: 0 auto;
+  overflow: hidden; /* Hide overflowing images */
 }
 
-.gallery img {
-  width: 100%;
-  height: 150px;
+.slider {
+  display: flex;
+  transition: transform 0.5s ease-in-out; /* Smooth sliding effect */
+}
+
+.slider img {
+  width: 100%; /* Each image takes up the full width of the slider */
+  flex-shrink: 0; /* Prevent images from shrinking */
   object-fit: cover;
   border-radius: 4px;
   border: 1px solid var(--section-border);
+}
+
+.gallery-slider button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.gallery-slider .prev {
+  left: 10px; /* Position the "Previous" button on the left */
+}
+
+.gallery-slider .next {
+  right: 10px; /* Position the "Next" button on the right */
 }
 
 /* LINKS */

@@ -40,10 +40,16 @@
         <h3>Game Title One</h3>
         <p>Short description of the game and its core idea.</p>
 
-        <div class="gallery">
-          <img src="screenshots/game1_1.png" alt="Game One screenshot 1">
-          <img src="screenshots/game1_2.png" alt="Game One screenshot 2">
-          <img src="screenshots/game1_3.png" alt="Game One screenshot 3">
+        <div class="gallery-slider">
+          <button class="prev" aria-label="Previous">&lt;</button>
+          <div class="slider">
+            <img src="screenshots/game1_1.png" alt="Game One screenshot 1">
+            <img src="screenshots/game1_2.png" alt="Game One screenshot 2">
+            <img src="screenshots/game1_3.png" alt="Game One screenshot 3">
+            <img src="screenshots/game1_4.png" alt="Game One screenshot 4">
+            <img src="screenshots/game1_5.png" alt="Game One screenshot 5">
+          </div>
+          <button class="next" aria-label="Next">&gt;</button>
         </div>
       </article>
 
@@ -51,10 +57,16 @@
         <h3>Game Title Two</h3>
         <p>Short description of the game and its core idea.</p>
 
-        <div class="gallery">
-          <img src="screenshots/game2_1.png" alt="Game Two screenshot 1">
-          <img src="screenshots/game2_2.png" alt="Game Two screenshot 2">
-          <img src="screenshots/game2_3.png" alt="Game Two screenshot 3">
+        <div class="gallery-slider">
+          <button class="prev" aria-label="Previous">&lt;</button>
+          <div class="slider">
+            <img src="screenshots/game2_1.png" alt="Game Two screenshot 1">
+            <img src="screenshots/game2_2.png" alt="Game Two screenshot 2">
+            <img src="screenshots/game2_3.png" alt="Game Two screenshot 3">
+            <img src="screenshots/game2_4.png" alt="Game Two screenshot 4">
+            <img src="screenshots/game2_5.png" alt="Game Two screenshot 5">
+          </div>
+          <button class="next" aria-label="Next">&gt;</button>
         </div>
       </article>
 
@@ -62,10 +74,16 @@
         <h3>Game Title Three</h3>
         <p>Short description of the game and its core idea.</p>
 
-        <div class="gallery">
-          <img src="screenshots/game3_1.png" alt="Game Three screenshot 1">
-          <img src="screenshots/game3_2.png" alt="Game Three screenshot 2">
-          <img src="screenshots/game3_3.png" alt="Game Three screenshot 3">
+        <div class="gallery-slider">
+          <button class="prev" aria-label="Previous">&lt;</button>
+          <div class="slider">
+            <img src="screenshots/game3_1.png" alt="Game Three screenshot 1">
+            <img src="screenshots/game3_2.png" alt="Game Three screenshot 2">
+            <img src="screenshots/game3_3.png" alt="Game Three screenshot 3">
+            <img src="screenshots/game3_4.png" alt="Game Three screenshot 4">
+            <img src="screenshots/game3_5.png" alt="Game Three screenshot 5">
+          </div>
+          <button class="next" aria-label="Next">&gt;</button>
         </div>
       </article>
     </section>
@@ -80,10 +98,16 @@
           Brief description of what the app does and its main features.
         </p>
 
-        <div class="gallery">
-          <img src="screenshots/web_1.png" alt="Web app screenshot 1">
-          <img src="screenshots/web_2.png" alt="Web app screenshot 2">
-          <img src="screenshots/web_3.png" alt="Web app screenshot 3">
+        <div class="gallery-slider">
+          <button class="prev" aria-label="Previous">&lt;</button>
+          <div class="slider">
+            <img src="screenshots/web_1.png" alt="Web app screenshot 1">
+            <img src="screenshots/web_2.png" alt="Web app screenshot 2">
+            <img src="screenshots/web_3.png" alt="Web app screenshot 3">
+            <img src="screenshots/web_4.png" alt="Web app screenshot 4">
+            <img src="screenshots/web_5.png" alt="Web app screenshot 5">
+          </div>
+          <button class="next" aria-label="Next">&gt;</button>
         </div>
       </article>
     </section>
@@ -101,8 +125,27 @@
   </footer>
 
   <script>
-    document.getElementById("theme-toggle").addEventListener("click", () => {
-      document.body.classList.toggle("dark");
+    document.querySelectorAll('.gallery-slider').forEach(slider => {
+      const sliderContainer = slider.querySelector('.slider');
+      const prevButton = slider.querySelector('.prev');
+      const nextButton = slider.querySelector('.next');
+      let currentIndex = 0;
+
+      const updateSliderPosition = () => {
+        const slideWidth = sliderContainer.querySelector('img').clientWidth;
+        sliderContainer.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
+      };
+
+      prevButton.addEventListener('click', () => {
+        currentIndex = Math.max(currentIndex - 1, 0);
+        updateSliderPosition();
+      });
+
+      nextButton.addEventListener('click', () => {
+        const totalSlides = sliderContainer.querySelectorAll('img').length;
+        currentIndex = Math.min(currentIndex + 1, totalSlides - 1);
+        updateSliderPosition();
+      });
     });
   </script>
 
