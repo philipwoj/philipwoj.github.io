@@ -15,21 +15,35 @@
     <p>Game Developer & Web Developer</p>
 
     <div class="header-actions">
-      <a href="#games" class="btn">Games</a>
-      <a href="#web" class="btn">Web App</a><br/>
+      <a href="#web" class="btn">Web App</a>
+      <a href="#games" class="btn">Games</a><br/>
     </div>
   </header>
 
   <main>
 
-    <!-- ABOUT -->
-    <section id="about">
-      <h2>About Me</h2>
-      <p>
-        I’m a game developer with experience creating both 2D and 3D games using Unity and Godot,
-        with a strong focus on C# and AI-driven systems. I also build full-stack web applications
-        using React and Django.
-      </p>
+    <!-- WEB APP -->
+    <section id="web">
+      <h2>Web Application</h2>
+
+      <article class="project-card">
+        <h3>Budget Cloud</h3>
+        <p>
+          Brief description of what the app does and its main features.
+        </p>
+
+        <div class="gallery-slider">
+          <button class="prev" aria-label="Previous">&lt;</button>
+          <div class="slider">
+            <img src="screenshots/web_1.png" alt="Web app screenshot 1">
+            <img src="screenshots/web_2.png" alt="Web app screenshot 2">
+            <img src="screenshots/web_3.png" alt="Web app screenshot 3">
+            <img src="screenshots/web_4.png" alt="Web app screenshot 4">
+            <img src="screenshots/web_5.png" alt="Web app screenshot 5">
+          </div>
+          <button class="next" aria-label="Next">&gt;</button>
+        </div>
+      </article>
     </section>
 
     <!-- GAMES -->
@@ -37,7 +51,7 @@
       <h2>Games</h2>
 
       <article class="project-card">
-        <h3>Game Title One</h3>
+        <h3>Pixel Spaceman</h3>
         <p>Short description of the game and its core idea.</p>
 
         <div class="gallery-slider">
@@ -54,7 +68,7 @@
       </article>
 
       <article class="project-card">
-        <h3>Game Title Two</h3>
+        <h3>Family Business</h3>
         <p>Short description of the game and its core idea.</p>
 
         <div class="gallery-slider">
@@ -71,7 +85,7 @@
       </article>
 
       <article class="project-card">
-        <h3>Game Title Three</h3>
+        <h3>Modern War RTS</h3>
         <p>Short description of the game and its core idea.</p>
 
         <div class="gallery-slider">
@@ -82,30 +96,6 @@
             <img src="screenshots/game3_3.png" alt="Game Three screenshot 3">
             <img src="screenshots/game3_4.png" alt="Game Three screenshot 4">
             <img src="screenshots/game3_5.png" alt="Game Three screenshot 5">
-          </div>
-          <button class="next" aria-label="Next">&gt;</button>
-        </div>
-      </article>
-    </section>
-
-    <!-- WEB APP -->
-    <section id="web">
-      <h2>Web Application</h2>
-
-      <article class="project-card">
-        <h3>Web App Title</h3>
-        <p>
-          Brief description of what the app does and its main features.
-        </p>
-
-        <div class="gallery-slider">
-          <button class="prev" aria-label="Previous">&lt;</button>
-          <div class="slider">
-            <img src="screenshots/web_1.png" alt="Web app screenshot 1">
-            <img src="screenshots/web_2.png" alt="Web app screenshot 2">
-            <img src="screenshots/web_3.png" alt="Web app screenshot 3">
-            <img src="screenshots/web_4.png" alt="Web app screenshot 4">
-            <img src="screenshots/web_5.png" alt="Web app screenshot 5">
           </div>
           <button class="next" aria-label="Next">&gt;</button>
         </div>
@@ -146,6 +136,9 @@
         currentIndex = Math.min(currentIndex + 1, totalSlides - 1);
         updateSliderPosition();
       });
+
+      // Adjust slider position on window resize
+      window.addEventListener('resize', updateSliderPosition);
     });
   </script>
 

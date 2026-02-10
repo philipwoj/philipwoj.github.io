@@ -97,7 +97,7 @@ h2 {
 .gallery-slider {
   position: relative;
   width: 100%;
-  max-width: 400px; /* Adjust as needed */
+  max-width: 4003px; /* Adjust as needed */
   margin: 0 auto;
   overflow: hidden; /* Hide overflowing images */
 }
