@@ -165,25 +165,3 @@ body.dark footer {
   background: #0f0f0f;
 }
 
-/* Back to Top Button */
-.back-to-top {
-  position: fixed; /* Makes the button stay in the same position while scrolling */
-  bottom: 20px; /* Distance from the bottom of the viewport */
-  right: 20px; /* Distance from the right of the viewport */
-  display: none; /* Hidden by default */
-  background-color: #0066cc;
-  color: white;
-  border: none;
-  border-radius: 50%;
-  width: 50px;
-  height: 50px;
-  font-size: 18px;
-  cursor: pointer;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-  z-index: 1000; /* Ensures it stays above other elements */
-  transition: opacity 0.3s ease-in-out; /* Smooth fade-in and fade-out */
-}
-
-.back-to-top:hover {
-  background-color: #004080;
-}
