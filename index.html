@@ -152,9 +152,9 @@
     // Show or hide the button based on scroll position
     window.onscroll = function () {
       if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
-        backToTopButton.style.display = "block";
+        backToTopButton.style.display = "block"; // Show the button
       } else {
-        backToTopButton.style.display = "none";
+        backToTopButton.style.display = "none"; // Hide the button
       }
     };
 
@@ -166,7 +166,7 @@
       });
     }
   </script>
-
+  
   <button id="backToTop" class="back-to-top" onclick="scrollToTop()">↑ Back to Top</button>
 
 </body>
