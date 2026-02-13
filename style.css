@@ -1,11 +1,11 @@
 :root {
-  --bg: #f9f9f9;
-  --text: #333;
+  --bg: #636363;
+  --text: #ffffff;
   --header-bg: #222;
   --header-text: #fff;
-  --link: #0066cc;
+  --link: #636363;
   --section-border: #ddd;
-  --card-bg: #ffffff;
+  --card-bg: #222;
 }
 
 body.dark {
@@ -24,6 +24,13 @@ body {
   background: var(--bg);
   color: var(--text);
   line-height: 1.6;
+}
+
+/* Specific titles */
+#web h2,
+#games h2,
+#resume h2 {
+  color: rgb(255, 255, 255); /* Set these titles to black */
 }
 
 /* HEADER */
