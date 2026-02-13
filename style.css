@@ -97,7 +97,7 @@ h2 {
 .gallery-slider {
   position: relative;
   width: 100%;
-  max-width: 4003px; /* Adjust as needed */
+  max-width: 800px; /* Adjust as needed */
   margin: 0 auto;
   overflow: hidden; /* Hide overflowing images */
 }
@@ -108,9 +108,11 @@ h2 {
 }
 
 .slider img {
-  width: 100%; /* Each image takes up the full width of the slider */
+  width: 100%; /* Ensure the image takes up the full width of the slider */
+  height: auto; /* Maintain the aspect ratio */
+  max-height: 450px; /* Set a maximum height to prevent overflow */
   flex-shrink: 0; /* Prevent images from shrinking */
-  object-fit: cover;
+  object-fit: cover; /* Ensure the image covers the area without distortion */
   border-radius: 4px;
   border: 1px solid var(--section-border);
 }
