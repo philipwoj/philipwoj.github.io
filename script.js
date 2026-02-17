@@ -24,3 +24,8 @@
         modalImg.style.transform = 'none';
       }
     });
+
+    // Close modal when clicking the expanded image (zoom-out cursor)
+    modalImg.addEventListener('click', () => {
+    modal.style.display = 'none';
+    });

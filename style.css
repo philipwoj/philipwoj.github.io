@@ -203,8 +203,8 @@ body.dark footer {
 
 /* Modal content (the expanded image) */
 .modal-content {
-  max-width: 90%;
-  max-height: 90%;
+  max-width: 50%;
+  max-height: 50%;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0,0,0,0.2);
   object-fit: contain;
@@ -213,8 +213,8 @@ body.dark footer {
 /* Close button */
 .modal .close {
   position: absolute;
-  top: 20px;
-  right: 35px;
+  top: 50px;
+  right: 275px;
   color: rgb(255, 0, 0);
   font-size: 40px;
   font-weight: bold;
@@ -226,4 +226,15 @@ body.dark footer {
   color: #ffafaf;
   text-decoration: none;
   cursor: pointer;
+}
+
+/* Hover shows magnifying glass */
+.gallery-slider .slider img {
+  cursor: zoom-in;
+}
+
+/* Modal shows zoom-out cursor */
+.modal,
+.modal-content {
+  cursor: zoom-out;
 }
