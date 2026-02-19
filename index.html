@@ -30,7 +30,7 @@
       <article class="project-card">
         <h3>Budget Cloud</h3>
         <p>
-          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Budget Cloud</b> is a web application that provides cloud computing architecture estimates from 4 major cloud providers: GCP, AWS, Azure, and Oracle. It uses daily refreshed live data and a user form to calculate estimates based on the user's input. The frontend is built using React.js, while the backend is powered by Django with SQLite for data storage.
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Budget Cloud</b> is a web application that provides cloud computing architecture estimates from 4 major cloud providers: GCP, AWS, Azure, and Oracle. It uses daily refreshed live data and a user form to calculate estimates based on the user's input. The frontend is built using React.js, while the backend is powered by Django.
         </p>
 
         <div class="gallery-slider">
@@ -141,9 +141,14 @@
     <p>© 2026 Philip Wojdyna</p>
   </footer>
 
-  <div id="imageModal" class="modal" >
-    <span class="close">&times;</span>
-    <img class="modal-content" id="expandedImg" alt="Expanded Image">
+  <div id="imageModal" class="modal">
+    <div class="modal-frame">
+      <button class="modal-nav modal-prev" aria-label="Previous image">&lt;</button>
+      <img class="modal-content" id="expandedImg" alt="Expanded Image">
+      <button class="modal-nav modal-next" aria-label="Next image">&gt;</button>
+      <div class="modal-counter" id="modalCounter">1 / 1</div>
+      <button class="close" aria-label="Close image">&times;</button>
+    </div>
   </div>
 
   <script>
@@ -151,11 +156,10 @@
     const sliderContainer = slider.querySelector('.slider');
     const prevButton = slider.querySelector('.prev');
     const nextButton = slider.querySelector('.next');
-    const counter = slider.querySelector('.counter'); // Select the counter
+    const counter = slider.querySelector('.counter');
     const totalSlides = sliderContainer.querySelectorAll('img').length;
     let currentIndex = 0;
 
-    // Initialize the counter
     const updateCounter = () => {
       counter.textContent = `${currentIndex + 1} / ${totalSlides}`;
     };
@@ -163,7 +167,13 @@
     const updateSliderPosition = () => {
       const slideWidth = sliderContainer.querySelector('img').clientWidth;
       sliderContainer.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
-      updateCounter(); // Update the counter whenever the slide changes
+      slider.dataset.currentIndex = currentIndex;
+      updateCounter();
+    };
+
+    slider.__setIndex = (index) => {
+      currentIndex = Math.max(0, Math.min(index, totalSlides - 1));
+      updateSliderPosition();
     };
 
     prevButton.addEventListener('click', () => {
@@ -176,10 +186,9 @@
       updateSliderPosition();
     });
 
-    // Adjust slider position and counter on window resize
     window.addEventListener('resize', updateSliderPosition);
 
-    // Initialize the counter on page load
+    slider.dataset.currentIndex = currentIndex;
     updateCounter();
   });
   </script>
